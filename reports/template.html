@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wealth Forecast Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+        h1, h2 { color: #444; }
+        .targets ul { list-style-type: none; padding: 0; }
+        .targets li { padding: 5px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: right; }
+        th { background-color: #f0f0f0; }
+        .highlight { background-color: #d0f0d0; font-weight: bold; }
+        img { max-width: 100%; margin-top: 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Wealth Forecast Report</h1>
+
+    <div class="targets">
+        <h2>Target Milestones</h2>
+        <ul>
+            <li>🎯 <strong>Gross Wealth Target:</strong> {{ targets.gross_target }} reached in Year {{ targets.gross_year }}</li>
+            <li>🎯 <strong>Net Wealth Target:</strong> {{ targets.net_target }} reached in Year {{ targets.net_year }}</li>
+            <li>🎯 <strong>Annual Gain Target:</strong> {{ targets.gain_target }} reached in Year {{ targets.gain_year }}</li>
+        </ul>
+    </div>
+
+    <h2>Wealth Over Time</h2>
+    <img src="../{{ chart_file }}" alt="Wealth Chart">
+
+    <h2>Yearly Breakdown</h2>
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Gross</th>
+            <th>Net</th>
+            <th>Real Net</th>
+            <th>Capital</th>
+            <th>Loan</th>
+            <th>Annual Gain</th>
+        </tr>
+        {% for row in wealth_data %}
+        <tr 
+            {% if row.year == targets.gross_year or row.year == targets.net_year or row.year == targets.gain_year %}
+                class="highlight"
+            {% endif %}
+        >
+            <td>{{ row.year }}</td>
+            <td>{{ row.gross | round(2) }}</td>
+            <td>{{ row.net | round(2) }}</td>
+            <td>{{ row.real_net | round(2) }}</td>
+            <td>{{ row.capital | round(2) }}</td>
+            <td>{{ row.loan | round(2) }}</td>
+            <td>{{ row.annual_gain | round(2) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

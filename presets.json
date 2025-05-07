@@ -1,0 +1,36 @@
+{
+  "jahas": {
+    "years": "10",
+    "starting_capital": "1000",
+    "starting_loan": "0",
+    "static_return": "7",
+    "static_investment": "1000",
+    "static_new_loan": "0",
+    "inflation_rate": "2",
+    "loan_interest_rate": "0",
+    "net_target": "500000",
+    "gross_target": "600000",
+    "gain_target": "25000",
+    "cash_injections_json": "",
+    "debt_injections_json": "",
+    "withdrawals_json": "",
+    "debt_repayments_json": ""
+  },
+  "Oikea salkku": {
+    "years": "60",
+    "starting_capital": "15000",
+    "starting_loan": "85000",
+    "static_return": "8",
+    "static_investment": "1000",
+    "static_new_loan": "300",
+    "inflation_rate": "2",
+    "loan_interest_rate": "5",
+    "net_target": "500000",
+    "gross_target": "600000",
+    "gain_target": "40000",
+    "cash_injections_json": "",
+    "debt_injections_json": "",
+    "withdrawals_json": "",
+    "debt_repayments_json": ""
+  }
+}

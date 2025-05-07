@@ -1,0 +1,7 @@
+matplotlib
+jinja2
+weasyprint
+matplotlib
+flask
+gunicorn
+
